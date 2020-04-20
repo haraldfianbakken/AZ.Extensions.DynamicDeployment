@@ -74,6 +74,8 @@ Deploy this file and evaluate
                           paramSimpleExpression      String                     mystorageaccount
                           paramComplexEvaluator      String                     devopsdemoapib081
 
+***Note:*** Using a dynamic expression such as this (Get-AzStorageAccount)[0] might not be a good idea from idempotency point of view. But should illustrate the dynamics you can do with this.
+
 ## Example 2 - Params (if you want to keep your template file clean)    
     # NB: Assume same variables & functions in session as previous example
     $params = Expand-AzParameters -templateParameterFile .\Template\ExpressionDeploy.params.json
