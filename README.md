@@ -16,6 +16,7 @@ Disclaimer: Module comes with no warrenty, use at own risk.
 - Inject function return values
 - Dynamic evaluation on parameters on deployment
 - Dynamic evaluation/injection for default values on template
+- Use in advanced deployment scenarios - e.g. generalized deployments where variables are evaluated per 'asset/customer' 
 
 ## Syntax
 To have the 'evaluator' work - you need to add a 'magic' string in your files with. The magic string has the following format : $pwsh[<$variable>] $pwsh[{<func_with_variables}]
