@@ -5,7 +5,7 @@ This module allows you to input a template or a params file and dynamically eval
 
 The returned value can be used and passed as a complete template or as params to a template deployment. 
 
-***Disclaimer:*** Module comes with no warrenty, use at own risk. 
+***Disclaimer:*** Module comes with no warranty, use at own risk. 
 
 ***Feature Requests or bug:*** Please open a bug or create a pull request for new features you'd like added to the utils
 
