@@ -41,5 +41,6 @@ jobs:
       - name: Publish to PSGallery
         shell: pwsh
         run: |
+          $null = Find-Module -Name Az | Install-Module -Force
           Publish-Module -Path '.\' -NuGetApiKey "${{ secrets.NUGET_PUBLISHER_KEY }}"
         
