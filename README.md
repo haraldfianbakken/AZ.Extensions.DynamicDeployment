@@ -73,6 +73,14 @@ Deploy this file and evaluate
     # NB: Assume same variables & functions in session as previous example
     $params = Expand-AzParameters -templateParameterFile .\Template\ExpressionDeploy.params.json
     $deployment = New-AzResourceGroupDeployment -TemplateFile .\Templates\ExpressionDeployClean.json -TemplateParameterObject $params -ResourceGroup 'test-RG' -Verbose
+    $deployment
+    # Shortened for the readability
+    Outputs                 :
+                          Name                       Type                       Value
+                          =========================  =========================  ==========
+                          paramSimpleExpression      String                     mystorageaccount
+                          paramComplexEvaluator      String                     devopsdemoapib081
+                          paramUsingFuncEvaluator    String                     Hello TestingVariable
 # Usage
 ## Requirements
  - Powershell 7 and higher (might work with lower versions, but untested)
