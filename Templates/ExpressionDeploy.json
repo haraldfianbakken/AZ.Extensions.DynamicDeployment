@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {        
+        "paramUsingSimpleExpression": {
+            "type": "string",
+            "defaultValue":  "$pwsh[$storageNameFromPS]"
+        },
+        "paramUsingcomplexEvaluator": {
+            "type": "string",
+            "defaultValue":  "$pwsh[{((Get-AzStorageAccount)[0]).StorageAccountName}]"
+        },
+        "paramUsingFuncEvaluator": {
+            "type": "string",
+            "defaultValue": "$pwsh[{(Get-SomeData -testParam '$myVar')}]"
+         }
+        
+    },
+    "variables": {
+       
+    },
+    "resources": [
+       
+    ],
+    "outputs": {
+        "paramSimpleExpression": {
+            "type": "string",
+            "value": "[parameters('paramUsingSimpleExpression')]"
+        },
+        "paramComplexEvaluator": {
+            "type": "string",
+            "value": "[parameters('paramUsingcomplexEvaluator')]"
+        },
+        "paramUsingFuncEvaluator" : {
+            "type": "string",
+            "value": "[parameters('paramUsingFuncEvaluator')]"
+        }
+    }
+}

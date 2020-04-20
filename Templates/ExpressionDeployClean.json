@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {        
+        "paramUsingSimpleExpression": {
+            "type": "string"            
+        },
+        "paramUsingcomplexEvaluator": {
+            "type": "string"            
+        },
+        "paramUsingFuncEvaluator": {
+            "type": "string"
+         }
+        
+    },
+    "variables": {
+       
+    },
+    "resources": [
+       
+    ],
+    "outputs": {
+        "paramSimpleExpression": {
+            "type": "string",
+            "value": "[parameters('paramUsingSimpleExpression')]"
+        },
+        "paramComplexEvaluator": {
+            "type": "string",
+            "value": "[parameters('paramUsingcomplexEvaluator')]"
+        },
+        "paramUsingFuncEvaluator" : {
+            "type": "string",
+            "value": "[parameters('paramUsingFuncEvaluator')]"
+        }
+    }
+}
