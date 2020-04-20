@@ -5,6 +5,8 @@ This module allows you to input a template or a params file and dynamically eval
 
 The returned value can be used and passed as a complete template or as params to a template deployment. 
 
+Disclaimer: Module comes with no warrenty, use at own risk. 
+
 ## Current support
  - Parameters in template file (Evaluating and setting default value)
  - Parameters from parameters file (Evaluating and setting value)
@@ -21,7 +23,7 @@ To have the 'evaluator' work - you need to add a 'magic' string in your files wi
 ## How evaluation is performed
 - $pwsh[] is checked for; if it's present - the expression will start the evaluation 
 - Variables are injected into the string
-- if {} was present in the string - the expression inside the string is evaluated (after variable expansion)
+- if {} was present in the string - the expression inside the string is evaluated (after variable expansion) - hence allowing fairly complex functions to evaluate together with variable contents
 
 Because $pwsh[] has a special meaning - this means you can never have a value with this exact string if you are to use this module. Unless adding support for custom expression (which is there, but not exposed yet)
 
@@ -93,12 +95,6 @@ Deploy this file and evaluate
     Get-Command -Module Az.Extensions.DynamicDeployment
 
 
-# Examples 
-## Simple - variable substitue from Powershell
-
-In your ARM Template - create a simple expression (Ex: [Templates/Simple.json](Templates/Simple.json)):
-
-    "value": "$pwsh[$myVar]"
 
 ## Potentially addons
  - Add support for same in variables section
